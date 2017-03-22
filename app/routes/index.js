@@ -12,6 +12,16 @@ export default Ember.Route.extend({
             this.transitionTo('index');
         },
 
+        editBean(bean, params) {
+            Object.keys(params).forEach(function(key) {
+                if(params[key]!==undefined) {
+                    bean.set(key,params[key]);
+                }
+            });
+            bean.save();
+            this.transitionTo('index');
+        },
+
         beanResponse(params) {
             var newResponse = this.store.createRecord('bean', params);
             newResponse.save();

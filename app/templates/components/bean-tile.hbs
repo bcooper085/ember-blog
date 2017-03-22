@@ -1,28 +1,26 @@
 <li>
     {{bean.owner}}<br>{{bean.category}}<br>{{bean.body}}<br><img src={{bean.image}}>
     {{#if respondToPost }}
+
     <form class="post-response">
         <div class="form-group">
             {{input value=owner id="owner" placeholder="Name"}}
         </div>
-
         <div class="form-group">
             {{input value=category id="category" placeholder="Category"}}
         </div>
-
         <div class="form-group">
             {{input value=body id="body" placeholder="Post"}}
         </div>
-
         <div class="form-group">
             {{input value=image id="image" placeholder="Image URL"}}
         </div>
-
         <button {{action 'beanResponse'}}>Post Bean Response</button>
-
     </form>
+
     {{else}}
         <button {{action 'postResponse'}}>Respond to Bean</button>
     {{/if}}
+    {{update-bean bean=bean editBean="editBean"}}
     <button {{action 'delete' bean}}>Delete Bean</button>
 </li>

@@ -1,0 +1,25 @@
+{{#if updateBean}}
+    <h4>Edit {{bean.owner}}'s {{bean.category}} Bean</h4>
+    <div>
+        <form class="edit-post">
+            <div class="form-group">
+                {{input value=owner id="owner" placeholder=bean.owner}}
+            </div>
+
+            <div class="form-group">
+                {{input value=category id="category" placeholder=bean.category}}
+            </div>
+
+            <div class="form-group">
+                {{input value=body id="body" placeholder=bean.body}}
+            </div>
+
+            <div class="form-group">
+                {{input value=image id="image" placeholder=bean.image}}
+            </div>
+            <button {{action 'editBean' bean}}>Post Bean Edit</button>
+        </form>
+    </div>
+{{else}}
+    <button {{action 'updateBean'}}>Edit Bean</button>
+{{/if}}

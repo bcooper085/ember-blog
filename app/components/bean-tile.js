@@ -11,6 +11,9 @@ export default Ember.Component.extend({
                 this.sendAction('destroyBean', bean);
             }
         },
+        editBean(bean, params) {
+            this.sendAction('editBean', bean, params);
+        },
         beanResponse() {
             var params = {
                 owner: this.get('owner'),
