@@ -4,6 +4,8 @@
 
 <ul>
     {{#each model as |bean|}}
-        {{bean-tile bean=bean destroyBean="destroyBean"}}
+        {{bean-tile bean=bean destroyBean="destroyBean" beanResponse="beanResponse"}}
     {{/each}}
 </ul>
+
+{{new-bean saveBean="saveBean"}}
