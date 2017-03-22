@@ -1,3 +1,9 @@
 <h1>Blog Roasted</h1>
 
 <p>Explore and get roasted.</p>
+
+<ul>
+    {{#each model as |bean|}}
+    <li>{{bean.owner}}<br>{{bean.category}}<br>{{bean.body}}<br><img src={{bean.image}}></li>
+    {{/each}}
+</ul>
