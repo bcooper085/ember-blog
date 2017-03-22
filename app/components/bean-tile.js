@@ -5,6 +5,11 @@ export default Ember.Component.extend({
     actions: {
         postResponse: function() {
             this.set('respondToPost', true);
+        },
+        delete(bean) {
+            if (confirm('You sure you want to delete this bean?')) {
+                this.sendAction('destroyBean', bean);
+            }
         }
     }
 });

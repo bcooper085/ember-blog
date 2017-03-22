@@ -5,6 +5,7 @@
             <input type="text" name="owner" value="owner" placeholder="name">
         </form>
     {{else}}
-        <button {{action 'postResponse'}}>Respond</button>
+        <button {{action 'postResponse'}}>Respond to Bean</button>
     {{/if}}
+    <button {{action 'delete' bean}}>Delete Bean</button>
 </li>
