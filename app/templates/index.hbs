@@ -4,6 +4,6 @@
 
 <ul>
     {{#each model as |bean|}}
-    <li>{{bean.owner}}<br>{{bean.category}}<br>{{bean.body}}<br><img src={{bean.image}}></li>
+        {{bean-tile bean=bean}}
     {{/each}}
 </ul>

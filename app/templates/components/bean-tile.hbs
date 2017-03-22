@@ -1,0 +1,10 @@
+<li>
+    {{bean.owner}}<br>{{bean.category}}<br>{{bean.body}}<br><img src={{bean.image}}>
+    {{#if respondToPost }}
+        <form class="post-response">
+            <input type="text" name="owner" value="owner" placeholder="name">
+        </form>
+    {{else}}
+        <button {{action 'postResponse'}}>Respond</button>
+    {{/if}}
+</li>
