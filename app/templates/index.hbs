@@ -11,7 +11,7 @@
 <h3>Comments</h3>
 <ul>
   {{#each model.comments as |comment|}}
-    <li>{{comment.owner}}{{comment.body}}</li>
+    <li>{{comment-tile comment=comment editComment="editComment"}}</li>
   {{/each}}
 </ul>
 

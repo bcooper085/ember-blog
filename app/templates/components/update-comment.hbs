@@ -1,0 +1,21 @@
+{{#if updateComment}}
+    <h4>Edit {{comment.owner}}'s Comment</h4>
+    <div>
+        <form class="edit-comment">
+            <div class="form-group">
+                {{input value=owner id="owner" placeholder=comment.owner}}
+            </div>
+
+            <div class="form-group">
+                {{input value=body id="body" placeholder=comment.body}}
+            </div>
+
+            <div class="form-group">
+                {{input value=image id="image" placeholder=comment.image}}
+            </div>
+            <button {{action 'editComment' comment}}>Post Comment Edit</button>
+        </form>
+    </div>
+{{else}}
+    <button {{action 'updateComment'}}>Edit Comment</button>
+{{/if}}
