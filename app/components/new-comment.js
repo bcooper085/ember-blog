@@ -12,6 +12,7 @@ export default Ember.Component.extend({
               owner: this.get('owner'),
               body: this.get('body'),
               image: this.get('image'),
+              bean: this.get('bean')
           };
           this.set('respondToPost', false);
           this.sendAction('saveComment', params);

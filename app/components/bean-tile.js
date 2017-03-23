@@ -9,7 +9,6 @@ export default Ember.Component.extend({
         },
         editBean(bean, params) {
             this.sendAction('editBean', bean, params);
-        },
-        
+        },      
     }
 });

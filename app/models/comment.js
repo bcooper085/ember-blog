@@ -4,4 +4,5 @@ export default DS.Model.extend({
   owner: DS.attr(),
   body: DS.attr(),
   image: DS.attr(),
+  bean: DS.belongsTo('bean', { async: true })
 });

@@ -7,12 +7,3 @@
 </ul>
 
 {{new-bean saveBean="saveBean"}}
-<hr>
-<h3>Comments</h3>
-<ul>
-  {{#each model.comments as |comment|}}
-    <li>{{comment-tile comment=comment editComment="editComment"}}</li>
-  {{/each}}
-</ul>
-
-{{new-comment  saveComment="saveComment"}}

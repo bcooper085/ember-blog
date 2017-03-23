@@ -1,0 +1,10 @@
+{{bean.owner}}<br>{{bean.category}}<br>{{bean.body}}<br><img src={{bean.image}}>
+
+<h2>Comments</h2>
+<ul>
+  {{#each bean.comments as |comment|}}
+    {{comment-tile comment=comment}}
+  {{/each}}
+</ul>
+
+<button {{action 'delete' bean}}>Delete</button>
