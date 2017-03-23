@@ -1,0 +1,18 @@
+{{#if respondToPost }}
+
+<form class="post-comment">
+    <div class="form-group">
+        {{input value=owner id="owner" placeholder="Name"}}
+    </div>
+    <div class="form-group">
+        {{input value=body id="body" placeholder="Post"}}
+    </div>
+    <div class="form-group">
+        {{input value=image id="image" placeholder="Image URL"}}
+    </div>
+    <button {{action 'saveComment'}}>Post Bean Comment</button>
+</form>
+
+{{else}}
+    <button {{action 'postComment'}}>Comment on Bean</button>
+{{/if}}

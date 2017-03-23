@@ -1,9 +1,18 @@
 <h3>Spill the beans</h3>
 
 <ul>
-    {{#each model as |bean|}}
-        {{bean-tile bean=bean destroyBean="destroyBean" editBean="editBean" beanResponse="beanResponse"}}
-    {{/each}}
+  {{#each model.beans as |bean|}}
+    {{bean-tile bean=bean destroyBean="destroyBean" editBean="editBean"}}
+  {{/each}}
 </ul>
 
 {{new-bean saveBean="saveBean"}}
+<hr>
+<h3>Comments</h3>
+<ul>
+  {{#each model.comments as |comment|}}
+    <li>{{comment.owner}}{{comment.body}}</li>
+  {{/each}}
+</ul>
+
+{{new-comment  saveComment="saveComment"}}

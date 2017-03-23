@@ -2,13 +2,22 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model() {
-        return this.store.findAll('bean');
+      return Ember.RSVP.hash({
+        beans: this.store.findAll('bean'),
+        comments: this.store.findAll('comment')
+      });
     },
 
     actions: {
         saveBean(params) {
             var newBean = this.store.createRecord('bean', params);
             newBean.save();
+            this.transitionTo('index');
+        },
+
+        saveComment(params) {
+            var newComment = this.store.createRecord('comment', params);
+            newComment.save();
             this.transitionTo('index');
         },
 
@@ -22,15 +31,24 @@ export default Ember.Route.extend({
             this.transitionTo('index');
         },
 
-        beanResponse(params) {
-            var newResponse = this.store.createRecord('bean', params);
-            newResponse.save();
-            this.transitionTo('index');
-        },
+        // editComment(comment, params) {
+        //     Object.keys(params).forEach(function(key) {
+        //         if(params[key]!==undefined) {
+        //             comment.set(key,params[key]);
+        //         }
+        //     });
+        //     comment.save();
+        //     this.transitionTo('index');
+        // },
 
         destroyBean(bean) {
             bean.destroyRecord();
             this.transitionTo('index');
         }
+
+        // destroyComment(comment) {
+        //     comment.destroyRecord();
+        //     this.transitionTo('index');
+        // }
     }
 });
