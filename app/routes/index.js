@@ -13,11 +13,6 @@ export default Ember.Route.extend({
             newBean.save();
             this.transitionTo('index');
         },
-        saveComment(params) {
-          var newComment = this.store.createRecord('comment', params);
-          newComment.save();
-          this.transitionTo('index');
-        },
 
         editBean(bean, params) {
             Object.keys(params).forEach(function(key) {

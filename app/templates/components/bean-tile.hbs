@@ -2,4 +2,5 @@
     {{#link-to 'bean' bean.id}}{{bean.owner}}<br>{{bean.category}}<br>{{bean.body}}<br><img src={{bean.image}}>{{/link-to}}
 
     {{update-bean bean=bean editBean="editBean"}}
+    <button {{action 'delete' bean}}>Delete Bean</button>
 </li>

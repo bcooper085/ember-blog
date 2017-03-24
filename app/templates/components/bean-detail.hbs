@@ -3,8 +3,6 @@
 <h2>Comments</h2>
 <ul>
   {{#each bean.comments as |comment|}}
-    {{comment-tile comment=comment}}
+    {{comment-tile comment=comment editComment="editComment" destroyComment="destroyComment"}}
   {{/each}}
 </ul>
-
-<button {{action 'delete' bean}}>Delete</button>

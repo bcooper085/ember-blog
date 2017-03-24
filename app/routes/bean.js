@@ -4,6 +4,7 @@ export default Ember.Route.extend({
   model(params) {
     return this.store.findRecord('bean', params.bean_id);
   },
+  actions: {
   saveComment(params) {
     var newComment = this.store.createRecord('comment', params);
     var bean = params.bean;
@@ -25,5 +26,6 @@ export default Ember.Route.extend({
       });
       comment.save();
       this.transitionTo('index');
+    }
   },
 });
